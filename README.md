@@ -77,7 +77,7 @@ Status
 Project is complete
 
 Credits
-List of contriubutors:
+List of contributors:
 
 Molik Kidd
 Eliana Lugo

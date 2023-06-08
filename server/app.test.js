@@ -16,6 +16,8 @@ describe('Sauce , Items, Cart Models', () => {
         description: 'Boyfriend oversized sweater', price: "20.99", 
         category: "women's clothing", 
         image: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRZczSIZ7u8lMhh0yrsAtANsEz-_sk1ng7ANse1-QeK-8jt7BNC2Hi242PsmGWWIimbHvfbZfVeoEBtcadfvlRYegmqLfXQKJtug8ZIZF8c2G5wA1LJDvcEUA"  })
+        expect(item1.name).toBe('Oversized Sweater')
+        expect(item1.price).toBe('20.99')
     })
 
     // test to delete an item

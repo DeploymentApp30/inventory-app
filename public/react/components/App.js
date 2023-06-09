@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { ItemsList } from './ItemList';
 import HomeNavbar from './HomeNavbar';
 import LoginForm from './LoginForm';
@@ -13,8 +13,6 @@ export const App = () => {
 
 	const [items, setItems] = useState(null);
 	const [userEmail, setUserEmail] = useState('mzkidd5@gmai.com');
-
-	const [cart, setCart] = useState({})
 
 	async function getItems() {
 		try {
@@ -42,9 +40,15 @@ export const App = () => {
 				:
 				<div className='allOrSearch'>
 				<div className='row'>
-					<div className='col' id='left'>
-						<Button onClick={()=>{getItems()}}>Search All Items</Button>
-					</div>
+				<div className="col" id="left">
+					<Button onClick={() => {
+						getItems().then(items => {
+						console.log(items);
+						}, error => {
+						console.error(error);
+						});
+					}}>Search All Items</Button>
+				</div>
 					<div className='col' id="right">
 					<InputGroup className="mb-3 w-100">
 						<h5>Search by Category</h5>

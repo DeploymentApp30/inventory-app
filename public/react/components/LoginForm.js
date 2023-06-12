@@ -1,7 +1,7 @@
 // import React, {useState} from 'react'
 // import { Button } from 'react-bootstrap';
 // import Form from 'react-bootstrap/Form';
-// import apiURL from '../api';
+import apiURL from '../api';
 
 // export default function LoginForm({setUserEmail}) {
 //     const [email, setEmail] = useState('');
@@ -69,7 +69,7 @@ const LoginForm = () => {
     e.preventDefault();
 
     // Make a POST request to the server with the user's email and password
-    const response = await fetch('/login', {
+    const response = await fetch(`${apiURL}/users`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -79,6 +79,13 @@ const LoginForm = () => {
             password,
         }),
     });
+
+    // If the login was successful, get the user's data from the API
+    if (response.status === 200) {
+        const data = await response.json();
+  
+        // Set the user's data in the state
+        setUser(data);
 
     // Redirect the user to the inventory app's main page if the login was successful
     if (response.status === 200) {

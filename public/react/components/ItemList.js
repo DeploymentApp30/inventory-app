@@ -34,8 +34,7 @@ export const ItemsList = ({items, setItems}) => {
 		await response.json();
 	  }
 
-	  const addToCart = async (id) => {
-		// e.preventDefault();		
+	  const addToCart = async (id) => {		
 		const response = await fetch(`${apiURL}/cart`, {
 			method: "POST",
 			headers: {

@@ -18,8 +18,6 @@ export const AddItemModal = () => {
   
 console.log('apiurl', apiURL)
   const handleSubmit = async (e) => {
-		// e.preventDefault();
-    // location.reload()
 		const response = await fetch(`${apiURL}/items/`, {
 			method: "POST",
 			headers: {

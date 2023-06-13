@@ -17,4 +17,4 @@ const seed = async () => {
   }
 };
 
-await seed();
+seed();

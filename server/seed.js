@@ -18,6 +18,7 @@ const seed = async () => {
         console.log("db populated!");
     } catch (error) {
         console.error(error);
+        process.exit(1);
     }
 }
 
